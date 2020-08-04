@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: sci-pod
+spec:
+  containers:
+  - name: sci-pod
+    env:
+    - name: podPort
+      value: "80"
+    image: aaarora/sci-comp:latest
+    ports:
+    - containerPort: 80
+    resources: 
+      limits:
+        memory: "4Gi"
+        cpu: 2
+        #nvidia.com/gpu: 2
