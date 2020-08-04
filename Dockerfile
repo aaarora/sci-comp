@@ -4,7 +4,7 @@ LABEL maintainer Aashay <aaarora@ucsd.edu>
 
 RUN apt-get -y update
 
-RUN apt-get -y install build-essential
+RUN apt-get -y install build-essential && \
     apt-get -y install conda && \
     apt-get -y install vim && \
     apt-get -y install supervisor
