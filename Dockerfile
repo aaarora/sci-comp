@@ -1,14 +1,20 @@
 FROM ubuntu:latest
 LABEL maintainer Aashay <aaarora@ucsd.edu>
 
+COPY requirements.txt ./
+
 RUN apt-get -y update
 
 RUN apt-get -y install build-essential && \
     apt-get -y install vim && \
     apt-get -y install supervisor && \
-    apt-get -y install python3
+    apt-get -y install python3 && \
+    apt-get -y install python3-pip
 
-RUN pip install numpy scipy matplotlib ipython jupyter pandas sympy
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install requirements.txt
 
 EXPOSE 80
 
