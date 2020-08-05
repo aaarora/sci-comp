@@ -21,4 +21,4 @@ EXPOSE 80
 RUN mkdir -p /var/log/supervisor
 ADD supervisord.conf /etc/supervisor/supervisord.conf
 
-CMD ["exec /usr/bin/supervisord -c /etc/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
