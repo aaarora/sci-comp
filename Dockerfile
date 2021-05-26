@@ -2,6 +2,7 @@ FROM ubuntu:latest
 LABEL maintainer Aashay <aaarora@ucsd.edu>
 
 RUN apt-get -y update
+RUN apt-get -y upgrade
 
 RUN apt-get -y install build-essential && \
     apt-get -y install vim && \
