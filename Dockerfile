@@ -13,6 +13,6 @@ RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /var/log/supervisor
-ADD supervisord.conf /etc/supervisor/supervisord.conf
+ADD supervisord.conf /etc/supervisord.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
